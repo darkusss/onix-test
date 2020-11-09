@@ -1,0 +1,144 @@
+.wrapper {
+  display: flex;
+  position: relative;
+
+  .sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: black;
+    color: white;
+    transition: all 200ms linear;
+
+    &.active {
+      transform: scale(1);
+      width: 100%;
+    }
+
+    .circle {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+
+      display: none;
+      background: white;
+      border-radius: 10px;
+    }
+
+    &__brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+
+
+      & img {
+        margin-right: 1rem;
+      }
+
+      & h4 {
+        margin-right: auto;
+      }
+    }
+
+    &__about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #202020;
+      padding: 1rem 2rem;
+
+      & .position {
+        color: #7b7a7a;
+        font-size: 1.2rem;
+      }
+
+      & .image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+
+      & .task {
+        color: #7b7a7a;
+        font-size: 1.2rem;
+      }
+
+      & .count {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+    }
+
+    &__menu {
+      padding: 2rem;
+
+      .menu__link {
+        list-style: none;
+        margin-bottom: 1.5rem;
+
+        &:first-of-type {
+          color: #7b7a7a;
+          text-transform: uppercase;
+        }
+
+        & span {
+          background: #FFC200;
+          color: black;
+          width: 20px;
+          height: 20px;
+          line-height: 2rem;
+          display: inline-block;
+          text-align: center;
+          border-radius: 50%;
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    .dots {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      .dot {
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        background: #baabab;
+        border-radius: 50%;
+
+        &:not(:last-of-type) {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+
+
+
+    .sidebar {
+      transform: scale(0);
+      width: 0;
+      z-index: 10;
+
+      .circle {
+        display: block;
+      }
+    }
+  }
+}
